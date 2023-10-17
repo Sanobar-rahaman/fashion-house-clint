@@ -11,6 +11,7 @@ import Home from './Pages/Home/Home';
 import LogIn from './Pages/LogIn/LogIn';
 import Register from './Pages/Register/Register';
 import AuthProvider from './ContexApiAuth/AuthProvider';
+import AddProduct from './Pages/AddProduct/AddProduct';
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,11 @@ const router = createBrowserRouter([
       {
         path:'/register',
         element: <Register></Register>
+      },
+      //login route done 
+      {
+        path:'addproduct',
+        element: <AddProduct></AddProduct>
       }
 
     ]
