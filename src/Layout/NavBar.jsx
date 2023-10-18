@@ -8,10 +8,11 @@ const NavBar = () => {
     const Links = <>
 
             <li><NavLink to="/">Home</NavLink></li>
-            <li><NavLink to="addproduct">Add Product</NavLink></li>
-            <li><NavLink to="mycurt">My Curt</NavLink></li>
-            <li><NavLink to="login">LogIn</NavLink></li>
-            <li><NavLink to="register">Register</NavLink></li>
+            <li><NavLink to="/addproduct">Add Product</NavLink></li>
+            <li><NavLink to="/mycurt">My Curt</NavLink></li>
+            <li><NavLink to="/login">LogIn</NavLink></li>
+            <li><NavLink to="/register">Register</NavLink></li>
+            <li><NavLink to="/displayproduct">DisplayProduct</NavLink></li>
     
     </>
     const handlogout =()=>{

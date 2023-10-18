@@ -12,6 +12,7 @@ import LogIn from './Pages/LogIn/LogIn';
 import Register from './Pages/Register/Register';
 import AuthProvider from './ContexApiAuth/AuthProvider';
 import AddProduct from './Pages/AddProduct/AddProduct';
+import DispayProduct from './Pages/DisplayProducr/DispayProduct';
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,11 @@ const router = createBrowserRouter([
       {
         path:'addproduct',
         element: <AddProduct></AddProduct>
+      },
+      {
+        path:'displayproduct',
+        element:<DispayProduct></DispayProduct>,
+        loader:()=>fetch('http://localhost:5001/fashion')
       }
 
     ]
