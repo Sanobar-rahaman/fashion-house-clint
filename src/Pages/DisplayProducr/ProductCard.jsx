@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import swal from "sweetalert";
 
 
@@ -29,24 +30,24 @@ const ProductCard = ({ product,fashion,setFashion }) => {
     return (
         <div>
             <div className="card w-96  bg-base-100 shadow-xl max-w-2xl">
-                <figure><img src={photo} alt="Shoes" /></figure>
+                <figure><img className=" h-32" src={photo} alt="Shoes" /></figure>
                 <div className="card-body">
                     <div className="flex justify-between">
                         <div>
                             <h2 className=" text-2xl font-bold">Brand Name:{name}</h2>
                             <h3 className=" text-xl font-semibold">Type:{type}</h3>
                             <h2> price:{price}</h2>
+                            <h2>Rating:{rating}</h2>
                         </div>
                         <div className="btn-group btn-group-vertical">
-                            <button className="btn btn-active">Details</button>
-                            <button className="btn">Edit</button>
+                            <Link to={`/updateproduct/${_id}`}><button className="btn">Edit</button></Link>
                             <button onClick={()=>hsndleDelete(_id)} className="btn">Delete</button>
                         </div>
                     </div>
                     
                     <p>{description}</p>
-                    <div className="card-actions justify-end">
-                        <button className="btn btn-primary">add to curt</button>
+                    <div className="card-actions justify-center">
+                        <Link to={`/card/${name}`}><button className="btn btn-primary">{name}</button></Link>
                     </div>
                 </div>
             </div>

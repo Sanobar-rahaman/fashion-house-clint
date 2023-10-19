@@ -13,6 +13,8 @@ import Register from './Pages/Register/Register';
 import AuthProvider from './ContexApiAuth/AuthProvider';
 import AddProduct from './Pages/AddProduct/AddProduct';
 import DispayProduct from './Pages/DisplayProducr/DispayProduct';
+import UpdateProduct from './Pages/updateProduct/UpdateProduct';
+import Card from './Pages/Card/Card';
 
 const router = createBrowserRouter([
   {
@@ -21,7 +23,8 @@ const router = createBrowserRouter([
     children:[
       {
         path:'/',
-        element: <Home></Home>
+        element: <Home></Home>,
+        loader:()=>fetch('http://localhost:5001/fashion')
       },
       {
         path:'/login',
@@ -34,13 +37,24 @@ const router = createBrowserRouter([
       },
       //login route done 
       {
-        path:'addproduct',
+        path:'/addproduct',
         element: <AddProduct></AddProduct>
       },
       {
-        path:'displayproduct',
+        path:'/displayproduct',
         element:<DispayProduct></DispayProduct>,
         loader:()=>fetch('http://localhost:5001/fashion')
+      },
+      {
+        path:'/updateproduct/:id',
+        element: <UpdateProduct></UpdateProduct>,
+        loader:({params})=>fetch(`http://localhost:5001/fashion/${params.id}`)
+      },
+      // card part
+      {
+        path:'/card/:name',
+        element:<Card></Card>,
+        loader:()=>fetch(`http://localhost:5001/fashion`)
       }
 
     ]
