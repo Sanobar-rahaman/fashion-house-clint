@@ -1,25 +1,21 @@
-import { useState } from "react";
-import ProductCard from "../DisplayProducr/ProductCard";
 import { useLoaderData } from "react-router-dom";
+import HomeCard from "./HomeCard";
+
 
 
 
 const Home = () => {
-    const products = useLoaderData()
-    const[fashion,setFashion] = useState(products)
+    const fashion = useLoaderData()
+    
+    
     return (
         <div>
-            <h2>Hello From Home</h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-5">
+            <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {
-                    fashion.map(product=><ProductCard 
-                        key={product._id}
-                         product={product}
-                         fashion={fashion}
-                         setFashion={setFashion}
-                          ></ProductCard> )
+                    fashion.map(fa=><HomeCard key={fa.id} fashion ={fa} ></HomeCard>)
                 }
             </div>
+            
         </div>
     );
 };

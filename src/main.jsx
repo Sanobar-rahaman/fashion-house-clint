@@ -24,7 +24,7 @@ const router = createBrowserRouter([
       {
         path:'/',
         element: <Home></Home>,
-        loader:()=>fetch('http://localhost:5001/fashion')
+        loader:()=>fetch('/fashion.json')
       },
       {
         path:'/login',
@@ -41,7 +41,7 @@ const router = createBrowserRouter([
         element: <AddProduct></AddProduct>
       },
       {
-        path:'/displayproduct',
+        path:'/displayproduct/:brand',
         element:<DispayProduct></DispayProduct>,
         loader:()=>fetch('http://localhost:5001/fashion')
       },

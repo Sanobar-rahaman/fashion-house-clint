@@ -7,6 +7,7 @@ import { useState } from "react";
 const DispayProduct = () => {
     const products = useLoaderData()
     const[fashion,setFashion] = useState(products)
+    console.log(fashion);
    
    
     return (
