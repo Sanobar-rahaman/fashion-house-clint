@@ -9,7 +9,7 @@ const NavBar = () => {
 
             <li><NavLink to="/">Home</NavLink></li>
             <li><NavLink to="/addproduct">Add Product</NavLink></li>
-            <li><NavLink to="/mycurt">My Curt</NavLink></li>
+            <li><NavLink to="/addtocart">My Curt</NavLink></li>
             <li><NavLink to="/login">LogIn</NavLink></li>
             <li><NavLink to="/register">Register</NavLink></li>
             {/* <li><NavLink to="/displayproduct">DisplayProduct</NavLink></li> */}
@@ -36,7 +36,11 @@ const NavBar = () => {
         {Links}
       </ul>
     </div>
-    <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+
+    <div className="flex">
+        <img className=" h-10" src="https://i.ibb.co/8cBpwQp/png-transparent-fashion-design-logo-exquisite-women-s-fashion-logo-material-free-logo-design-templat.png" alt="" />
+    <a className="btn btn-ghost normal-case text-xl">Fashion</a>
+    </div>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">

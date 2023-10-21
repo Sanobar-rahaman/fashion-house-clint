@@ -14,7 +14,10 @@ import AuthProvider from './ContexApiAuth/AuthProvider';
 import AddProduct from './Pages/AddProduct/AddProduct';
 import DispayProduct from './Pages/DisplayProducr/DispayProduct';
 import UpdateProduct from './Pages/updateProduct/UpdateProduct';
-import Card from './Pages/Card/Card';
+
+import PrivateRoute from './Routes/PrivateRoute';
+import AddToCart from './Pages/AddtoCart/AddToCart';
+import MyData from './Pages/MyData/MyData';
 
 const router = createBrowserRouter([
   {
@@ -43,18 +46,25 @@ const router = createBrowserRouter([
       {
         path:'/displayproduct/:brand',
         element:<DispayProduct></DispayProduct>,
-        loader:()=>fetch('http://localhost:5001/fashion')
+        // http://localhost:5001
+        loader:({params})=>fetch(`https://fashion-server-five.vercel.app/fashionbrand/${params.brand}`)
       },
       {
         path:'/updateproduct/:id',
-        element: <UpdateProduct></UpdateProduct>,
-        loader:({params})=>fetch(`http://localhost:5001/fashion/${params.id}`)
+        element: <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
+        loader:({params})=>fetch(`https://fashion-server-five.vercel.app/fashion/${params.id}`)
+      },
+      {
+        path:'/mydata',
+        element: <MyData></MyData>
       },
       // card part
+     
       {
-        path:'/card/:name',
-        element:<Card></Card>,
-        loader:()=>fetch(`http://localhost:5001/fashion`)
+        path:'/addtocart',
+        element: <AddToCart></AddToCart>,
+        loader:()=> fetch('https://fashion-server-five.vercel.app/cart')
+        
       }
 
     ]

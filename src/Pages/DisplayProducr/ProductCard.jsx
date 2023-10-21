@@ -1,10 +1,13 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import swal from "sweetalert";
 
 
 const ProductCard = ({ product,fashion,setFashion }) => {
     const { _id, name, type, price, photo, description, rating } = product
-    // console.log(product);
+
+   
+    
 
     const hsndleDelete =_id=>{
         console.log(_id);
@@ -26,6 +29,22 @@ const ProductCard = ({ product,fashion,setFashion }) => {
         })
 
     } 
+     const  handleAddToCurt =() =>{
+        const fashionShow = { name, type, price, photo, description, rating } 
+        console.log(fashionShow);
+        fetch('https://fashion-server-five.vercel.app/cart',{
+            method:"post",
+            headers:{
+                'content-type':'application/json'
+            },
+            body:JSON.stringify(fashionShow)
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            console.log(data);
+        })
+
+     }
 
     return (
         <div>
@@ -40,14 +59,14 @@ const ProductCard = ({ product,fashion,setFashion }) => {
                             <h2>Rating:{rating}</h2>
                         </div>
                         <div className="btn-group btn-group-vertical">
-                            <Link to={`/updateproduct/${_id}`}><button className="btn">Edit</button></Link>
+                            <Link to={`/updateproduct/${_id}`}><button className="btn">Update</button></Link>
                             <button onClick={()=>hsndleDelete(_id)} className="btn">Delete</button>
                         </div>
                     </div>
                     
-                    <p>{description}</p>
+                    <p className=" text-4xl font-bold">{description}</p>
                     <div className="card-actions justify-center">
-                        <Link to={`/card/${name}`}><button className="btn btn-primary">{name}</button></Link>
+                        <button onClick={handleAddToCurt} className="btn btn bg-primary">add to cart</button>
                     </div>
                 </div>
             </div>

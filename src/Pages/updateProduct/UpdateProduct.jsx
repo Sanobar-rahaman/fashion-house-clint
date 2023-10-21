@@ -19,7 +19,7 @@ const UpdateProduct = () => {
         const photo = form.photo.value;
         const newData = {name,type,price,photo,description,rating}
         console.log(newData);
-        fetch(`http://localhost:5001/fashion/${_id}`,{
+        fetch(`https://fashion-server-five.vercel.app/fashion/${_id}`,{
             method:"PUT",
             headers:{
                 'content-type':'application/json'

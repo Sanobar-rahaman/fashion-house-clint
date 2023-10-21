@@ -6,13 +6,14 @@ import { useState } from "react";
 
 const DispayProduct = () => {
     const products = useLoaderData()
+    console.log(products);
     const[fashion,setFashion] = useState(products)
     console.log(fashion);
    
    
     return (
         <div>
-            <h2>Hello from display</h2>
+            
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-5">
                 {
                     fashion.map(product=><ProductCard 

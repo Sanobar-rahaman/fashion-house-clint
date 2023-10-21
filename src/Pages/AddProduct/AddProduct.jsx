@@ -13,7 +13,7 @@ const AddProduct = () => {
         const newData = {name,type,price,photo,description,rating}
         console.log(newData);
 
-        fetch('http://localhost:5001/fashion',{
+        fetch('https://fashion-server-five.vercel.app/fashion',{
             method:"POST",
             headers:{
                 'content-type':'application/json'

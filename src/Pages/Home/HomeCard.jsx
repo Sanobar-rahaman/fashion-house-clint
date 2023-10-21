@@ -10,7 +10,7 @@ const HomeCard = ({ fashion }) => {
                 <figure><img className=" h-24" src={image} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">{brandName}</h2>
-                    <p>If a dog chews shoes whose shoes does he choose?</p>
+                    <p>We are fashion Brand</p>
                     <div className="card-actions justify-end">
                         <button className="btn btn-primary">{brandName}</button>
                     </div>

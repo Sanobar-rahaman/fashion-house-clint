@@ -66,8 +66,10 @@ const LogIn = () => {
           </label>
         </div>
         <div className="form-control mt-6">
-          <button className="btn btn-primary">Register</button>
+          <button className="btn btn-primary">LogIn</button>
+          <div className="flex justify-center">
           <button onClick={handleGoogleLogIn} className="btn btn-circle">Google</button>
+          </div>
           <p>Already Have a account please <Link className="text-green-500" to='/register'>Register</Link></p>
         </div>
         </form>
