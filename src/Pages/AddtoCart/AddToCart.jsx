@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
+import swal from "sweetalert";
 
 
 const AddToCart = () => {
@@ -16,6 +17,7 @@ const AddToCart = () => {
         .then(res=>res.json())
         .then(data=>{
             console.log(data);
+            swal("Good job!", "You clicked the button!", "success");
             const reaming = cart.filter(car=>car._id!==id)
             seCart(reaming)
         })

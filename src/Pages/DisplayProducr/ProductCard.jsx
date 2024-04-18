@@ -31,6 +31,7 @@ const ProductCard = ({ product,fashion,setFashion }) => {
     } 
      const  handleAddToCurt =() =>{
         const fashionShow = { name, type, price, photo, description, rating } 
+        swal("Good job!", "You clicked the button!", "success");
         console.log(fashionShow);
         fetch('https://fashion-server-five.vercel.app/cart',{
             method:"post",
@@ -42,6 +43,7 @@ const ProductCard = ({ product,fashion,setFashion }) => {
         .then(res=>res.json())
         .then(data=>{
             console.log(data);
+            swal("Good job!", "You clicked the button!", "success");
         })
 
      }
